@@ -1,125 +1,84 @@
 🚨 Multimodal AI-Based Emergency Detection System
-📌 Overview
 
-The Multimodal AI-Based Emergency Detection System is a real-time intelligent system designed to detect emergency situations such as fire, accidents, weapons, theft, and human falls using both video and audio inputs.
+📖 Description
 
-The system combines computer vision (YOLOv8) and audio keyword detection to improve accuracy and reduce false alarms. When an emergency is detected, it triggers alerts, captures evidence, and sends notifications with location details.
+This project is a real-time emergency detection system that uses computer vision and audio analysis to identify critical situations such as fire, accidents, weapons, theft, and human falls.
 
-🎯 Problem Statement
+The system combines YOLOv8 object detection with voice-based keyword recognition to improve accuracy and reduce false alarms. Once an emergency is detected, it triggers alerts and sends relevant information such as image and location.
 
-Traditional surveillance systems rely on human monitoring, which:
-
-Is time-consuming
-Prone to human error
-Cannot ensure 24/7 attention
-
-This project solves the problem by automating emergency detection using AI, enabling faster and more reliable responses.
-
-💡 Key Features
-🎥 Real-time video monitoring using webcam/CCTV
-🔍 Emergency detection using YOLOv8 (Fire, Accident, Weapon, Theft, Fall)
-🎤 Voice-based emergency trigger (keywords like “help”, “fire”)
-🔔 Instant alert system (audio alarm)
-📍 Sends location + image to authorities/family
-🌐 Flask-based web interface
-📊 Supports multiple emergency classes detection
-🧠 Technologies Used
-Programming Language: Python
-Computer Vision: YOLOv8 (Ultralytics)
-Backend: Flask
-Frontend: HTML, CSS, Bootstrap
+🎯 Features
+Real-time video monitoring (CCTV/Webcam)
+Emergency detection using YOLOv8
+Supports multiple classes:
+Fire
+Accident
+Weapon
+Theft
+Falling person
+Voice-based emergency detection (keywords like help, fire)
+Alarm system for instant alerts
+Sends captured image and location
+Web interface using Flask
+🛠️ Tech Stack
+Language: Python
+Framework: Flask
+Model: YOLOv8 (Ultralytics)
 Libraries: OpenCV, NumPy, Pandas
-Audio Processing: Speech Recognition
-
-🏗️ System Architecture
-Video Input (CCTV/Webcam)
-        ↓
-Frame Extraction (every few seconds)
-        ↓
-YOLOv8 Model (Object Detection)
-        ↓
-Audio Input (Microphone)
-        ↓
-Keyword Detection
-        ↓
-Multimodal Decision Engine
-        ↓
-Emergency Detected?
-   ↙            ↘
- Yes              No
- ↓
-Alert Triggered (Sound + Notification)
- ↓
-Send Image + Location via Flask API
-⚙️ Installation & Setup
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/emergency-detection.git
-cd emergency-detection
-2️⃣ Create Virtual Environment
-python -m venv venv
-source venv/bin/activate   # Mac/Linux
-venv\Scripts\activate      # Windows
-3️⃣ Install Dependencies
-pip install -r requirements.txt
-4️⃣ Run the Application
-python app.py
-📂 Project Structure
+Frontend: HTML, CSS, Bootstrap
+Audio Processing: SpeechRecognition
+🏗️ Project Structure
 emergency-detection/
 │
-├── models/                # YOLOv8 trained weights
-├── static/                # CSS, JS files
-├── templates/             # HTML files (Flask)
-├── dataset/               # Training images & labels
-├── app.py                 # Main Flask backend
-├── detect.py              # YOLOv8 detection logic
-├── audio.py               # Voice detection module
-├── utils.py               # Helper functions
+├── models/              # Trained YOLOv8 weights
+├── dataset/             # Training data
+├── static/              # CSS, JS files
+├── templates/           # HTML files
+│
+├── app.py               # Main Flask app
+├── detect.py            # Detection logic
+├── audio.py             # Voice detection
+├── utils.py             # Helper functions
+│
 ├── requirements.txt
 └── README.md
-🤖 Model Training (YOLOv8)
+⚙️ Installation
+1. Clone Repository
+git clone https://github.com/your-username/emergency-detection.git
+cd emergency-detection
+2. Create Virtual Environment
+python -m venv venv
+venv\Scripts\activate   # Windows
+3. Install Dependencies
+pip install -r requirements.txt
+4. Run Application
+python app.py
+🤖 Model Training
 Why YOLOv8?
-Fast and real-time detection
+Fast and efficient for real-time detection
 High accuracy
-Supports custom training
-Training Steps
-Collect dataset (Fire, Accident, Weapon, etc.)
-Annotate using tools like LabelImg
-Convert to YOLO format
-Train model:
+Easy custom training
+Training Command
 yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50
-🔗 How It Works
-Captures video frames continuously
+⚡ How It Works
+Captures video frames from camera
 Detects objects using YOLOv8
-Simultaneously listens for emergency keywords
-Combines both outputs using a decision threshold
+Listens for emergency keywords
+Combines video + audio results
 If emergency detected:
-Plays alarm
+Triggers alarm
 Captures image
 Sends alert with location
 📊 Results
-✅ Achieved high detection accuracy (~90%+)
-⚡ Real-time performance
-🔁 Reduced false positives using multimodal approach
-🚀 Future Enhancements
-Mobile app integration
+Achieved ~90%+ detection accuracy
+Real-time performance
+Reduced false positives using multimodal approach
+🚀 Future Improvements
+Mobile application integration
 Cloud deployment (AWS/GCP)
-GPS tracking integration
-Face recognition for suspect identification
-Integration with police/emergency APIs
-📸 Screenshots (Optional)
-
-Add your project screenshots here
-
-🙋‍♀️ Author
+Live GPS tracking
+Face recognition
+Integration with emergency services
+👩‍💻 Author
 
 V MONICKA JAAI
 B.Tech – AI & Data Science
-📧 vmonickajaai@gmail.com
-
-⭐ Acknowledgements
-YOLOv8 by Ultralytics
-OpenCV Community
-Flask Framework
-📜 License
-
-This project is open-source and available under the MIT License.
