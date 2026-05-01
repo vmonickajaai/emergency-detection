@@ -4,7 +4,9 @@
 
 This project is a real-time emergency detection system that uses computer vision and audio analysis to identify critical situations such as fire, accidents, weapons, theft, and human falls.
 
+
 The system combines YOLOv8 object detection with voice-based keyword recognition to improve accuracy and reduce false alarms. Once an emergency is detected, it triggers alerts and sends relevant information such as image and location.
+
 
 🎯 Features
 Real-time video monitoring (CCTV/Webcam)
@@ -19,6 +21,8 @@ Voice-based emergency detection (keywords like help, fire)
 Alarm system for instant alerts
 Sends captured image and location
 Web interface using Flask
+
+
 🛠️ Tech Stack
 Language: Python
 Framework: Flask
@@ -26,6 +30,8 @@ Model: YOLOv8 (Ultralytics)
 Libraries: OpenCV, NumPy, Pandas
 Frontend: HTML, CSS, Bootstrap
 Audio Processing: SpeechRecognition
+
+
 🏗️ Project Structure
 emergency-detection/
 │
@@ -41,6 +47,8 @@ emergency-detection/
 │
 ├── requirements.txt
 └── README.md
+
+
 ⚙️ Installation
 1. Clone Repository
 git clone https://github.com/your-username/emergency-detection.git
@@ -52,6 +60,8 @@ venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 4. Run Application
 python app.py
+
+
 🤖 Model Training
 Why YOLOv8?
 Fast and efficient for real-time detection
@@ -59,6 +69,8 @@ High accuracy
 Easy custom training
 Training Command
 yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50
+
+
 ⚡ How It Works
 Captures video frames from camera
 Detects objects using YOLOv8
@@ -68,16 +80,22 @@ If emergency detected:
 Triggers alarm
 Captures image
 Sends alert with location
+
+
 📊 Results
 Achieved ~90%+ detection accuracy
 Real-time performance
 Reduced false positives using multimodal approach
+
+
 🚀 Future Improvements
 Mobile application integration
 Cloud deployment (AWS/GCP)
 Live GPS tracking
 Face recognition
 Integration with emergency services
+
+
 👩‍💻 Author
 
 V MONICKA JAAI
